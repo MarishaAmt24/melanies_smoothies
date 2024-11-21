@@ -5,7 +5,7 @@ from snowflake.snowpark.functions import col
 import requests
 
 smoothiefroot_response= requests.get("https://www.smoothiefroot.com/api/fruit/watermelon")
-st.text(smoothiefroot_response)
+st.text(smoothiefroot_response).json()
 
 # Write directly to the app
 st.title("Customize Your Smoothie! :cup_with_straw:")
@@ -15,7 +15,7 @@ st.write(
 )
 
 name_on_order = st.text_input("Name on Smoothie:")
-st.write("The name on your Snoothie will be:", name_on_order)
+st.write("The name on your Smoothie will be:", name_on_order)
 
 # session = get_active_session()
 cnx=st.connection("snowflake")
